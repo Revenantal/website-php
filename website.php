@@ -233,7 +233,7 @@ function website() {
          'code' => "GET /website.php?page=api\n\n{\n  \"files\": 1,\n  \"methods\": [\"website\"],\n  \"status\": \"it works on my machine\"\n}"],
         ['id' => 'testing', 'title' => 'Testing',
          'body' => 'Open the page in a browser. Does it load? Test passed. Does it not load? Refresh. Does it load now? Test passed.',
-         'code' => "// test suite\nwebsite(); // if you're reading this, it passed"],
+         'code' => "// test suite\nwebsite(); // if you're reading this, it passed (friday hotfix: still passed)"],
         ['id' => 'methods', 'title' => 'API Reference: all methods',
          'body' => 'Below is the complete list of every method in the framework, auto-generated from the source. Please allow several milliseconds to read it in full.',
          'code' => "website()\n    Does everything.\n    @since 2003"],
