@@ -74,6 +74,7 @@
  *                     arrays that haven't found themselves yet.
  * @return everything  Well, technically void. But spiritually, everything.
  */
+// TODO: website v2. rewrite everything. (est. 2 weeks) (2017)
 function website() {
 
     // DO NOT MERGE THIS BRANCH (this comment was merged)
