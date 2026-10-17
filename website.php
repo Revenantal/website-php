@@ -74,6 +74,11 @@
  *                     arrays that haven't found themselves yet.
  * @return everything  Well, technically void. But spiritually, everything.
  */
+// Kyle: refactored the header into its own function. cleaner!!
+function render_header($title) {
+    echo '<h1>' . $title . '</h1>';
+}
+
 function website() {
 
     // DO NOT MERGE THIS BRANCH (this comment was merged)
