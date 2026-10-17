@@ -239,6 +239,14 @@ The short version: shout "I'M IN WEBSITE.PHP" across the office before editing. 
 
 Pull requests that split `website()` into "smaller, more focused functions" will be closed. It is extremely focused. It is focused on everything.
 
+## Acknowledgements
+
+Every commit in this repository is co-authored by Claude, Gemini, Grok and ChatGPT.
+
+Only one of them actually did anything. They each believe it was them.
+
+This is the most enterprise thing about website.php: four AIs signed off on one file, nobody reviewed it, and it shipped on a Friday.
+
 ## License
 
 [MIT](LICENSE), plus the One-File Rider: you may use this file however you like, provided you never split it into two files.
