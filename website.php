@@ -1268,6 +1268,9 @@ SAMPLE;
     echo '<span>© ' . date('Y') . ' ' . $site['name'] . '. All rights reserved in one file.</span>';
     echo '<span>This page was rendered by website(). So was every other page. So will every future page.</span>';
     echo '<nav class="footer-links" aria-label="Standards">';
+    // The GitHub link. A version control system, linked from a framework whose
+    // version control is "comment it out". We contain multitudes.
+    echo '<a href="https://github.com/Revenantal/website-php">Source on GitHub (it\'s one file)</a>';
     echo '<a href="?page=robots">robots.txt</a><a href="?page=llms">llms.txt</a><a href="?page=cookies">Cookie Preferences</a>';
     echo '</nav>';
     echo '<span class="fine">Today is ' . $day_name . ', according to Kyle\'s day detector. It has never been wrong, except on Kyleday.</span>';

@@ -112,7 +112,7 @@ We use a branching model called **Trunk-Based Denial**. All real work happens on
 | `feature/database` | "Migrates to a database" by renaming an array to `$db`. Technically correct |
 | `hotfix/friday-deploy` | Deployed at 4:58 PM on a Friday. Fixed nothing. Broke nothing. Nobody knows why it exists |
 | `website-v2` | The rewrite. One commit. It's a TODO |
-| `do-not-merge` | Has been merged. Twice |
+| `do-not-merge` | Has been merged into `main`. Check the history. Check the comment it left behind |
 
 Merge conflicts are resolved by keeping both versions and commenting one out. See: **BACKUPS — DO NOT DELETE**.
 
@@ -123,7 +123,8 @@ Every release is the same commit, tagged with increasing confidence:
 - `v1.0.0`
 - `v1.0.0-final`
 - `v1.0.0-final-v2`
-- `v1.0.0-FINAL-v2` (pressed caps lock, felt powerful)
+- ~~`v1.0.0-FINAL-v2`~~ (we pressed caps lock and felt powerful, but Windows filenames aren't case-sensitive, so Git refused to create it: "tag already exists." The operating system has seen through us.)
+- `v1.0.0-final-v2-for-real`
 
 ## Deployment
 
