@@ -93,6 +93,21 @@ Routing is a chain of `if` statements on `$_GET['page']`. To add a route, add an
 
 Add `?accent=orange`, `green` or `blue` to change the colour. Each one has been personally approved by an `else if`.
 
+## Docker
+
+For people who need their one file to come in a container:
+
+```bash
+docker build -t website-php .
+docker run -p 8080:80 website-php
+```
+
+Then open http://localhost:8080.
+
+The Dockerfile is two lines long. It copies `website.php` into the container and renames it `index.php`. It's still one file. It just has a stage name now.
+
+We did list `Dockerfile` in our `.gitignore` as a file that should never exist. We have since un-ignored it. We don't want to talk about it.
+
 ## Testing
 
 Open the page in a browser. Does it load? Test passed. Does it not load? Refresh. Does it load now? Test passed.
