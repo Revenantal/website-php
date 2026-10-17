@@ -1,0 +1,38 @@
+# .gitignore for website.php
+#
+# Every pattern below is a file that should not exist.
+# We ignore them so that, if they are ever created, Git will
+# politely pretend it didn't see anything. Just like the rest of us.
+
+# Second files
+website2.php
+website-new.php
+website_OLD*.php
+*_backup.php
+*.php.bak
+
+# The 2019 incident
+helpers.php
+utils.php
+functions.php
+functions_FINAL.php
+
+# Things other frameworks have
+node_modules/
+vendor/
+composer.json
+composer.lock
+package.json
+.env
+.env.*
+docker-compose.yml
+Dockerfile
+kubernetes/
+
+# The database (we don't have one) (just in case)
+*.sqlite
+*.db
+
+# Windows, being Windows
+Thumbs.db
+desktop.ini
