@@ -246,6 +246,10 @@ function website() {
     // please consider a second file. Neither side has blinked.
     $leads = [];
 
+    // DATABASE MIGRATION COMPLETE. we now have a database.
+    // (we renamed the array. the array is now called $db. it is the same array.)
+    $db = $site;
+
 
     // ======================================================================
     //  AGENTS.md
