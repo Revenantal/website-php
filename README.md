@@ -95,7 +95,33 @@ Add `?accent=orange`, `green` or `blue` to change the colour. Each one has been 
 
 ## Docker
 
-For people who need their one file to come in a container:
+### A statement from the Founder regarding the Dockerfile
+
+We were told that a modern project "needs a Dockerfile."
+
+We asked why. We were told it was so that website.php would "run the same everywhere."
+
+We pointed out that website.php is one file, and it already runs the same everywhere, because it is the same file everywhere. We were told that was "not the point."
+
+We were then told the Dockerfile would make website.php "cloud-native." We asked what website.php was before. Nobody could tell us.
+
+And so, after a long and painful meeting, we present: **a second file, whose only job is to carry the first file.**
+
+### The Dockerfile
+
+```dockerfile
+FROM php:8.4-apache
+
+COPY website.php /var/www/html/index.php
+```
+
+Two lines. Read them slowly. Notice what happens on line two.
+
+**It renames website.php to `index.php`.**
+
+We want to be very clear that this is not a second file. It is the same file, entering a witness protection programme. Inside the container, website.php lives a quiet life under an assumed name. It doesn't talk about where it came from. If you see it, don't say anything.
+
+### Usage
 
 ```bash
 docker build -t website-php .
@@ -104,9 +130,49 @@ docker run -p 8080:80 website-php
 
 Then open http://localhost:8080.
 
-The Dockerfile is two lines long. It copies `website.php` into the container and renames it `index.php`. It's still one file. It just has a stage name now.
+### Container architecture
 
-We did list `Dockerfile` in our `.gitignore` as a file that should never exist. We have since un-ignored it. We don't want to talk about it.
+```
++--------------------------------------------------+
+|  Docker                                          |
+|  +--------------------------------------------+  |
+|  |  Debian (~75 MB)                           |  |
+|  |  +--------------------------------------+  |  |
+|  |  |  Apache (several thousand files)     |  |  |
+|  |  |  +--------------------------------+  |  |  |
+|  |  |  |  PHP 8.4 (several more)        |  |  |  |
+|  |  |  |  +--------------------------+  |  |  |  |
+|  |  |  |  |  index.php               |  |  |  |  |
+|  |  |  |  |  (it's website.php,      |  |  |  |  |
+|  |  |  |  |   in a fake moustache)   |  |  |  |  |
+|  |  |  |  +--------------------------+  |  |  |  |
+|  |  |  +--------------------------------+  |  |  |
+|  |  +--------------------------------------+  |  |
+|  +--------------------------------------------+  |
++--------------------------------------------------+
+```
+
+To run one file, Docker downloads an entire operating system, a web server and a language runtime. This is called "lightweight."
+
+### Frequently asked Docker questions
+
+**Do I need Docker to run website.php?**
+No. You need PHP. You have always only needed PHP. Docker is here because a recruiter asked.
+
+**Does the image contain more than one file?**
+The image contains roughly 20,000 files. website.php is one of them. The other 19,999 are infrastructure, and infrastructure doesn't count. That's the rule. We just made it up.
+
+**Is website.php now microservices?**
+It is one microservice. It is a macroservice in a microservice's clothing.
+
+**Can I use Kubernetes?**
+You can. We'd like you to sit with that decision first. Take a walk. Drink some water. If you still want to orchestrate a fleet of identical containers, each holding one identical file, we can't stop you. But we will be thinking about you.
+
+**Why was Dockerfile in the .gitignore?**
+Because it was supposed to never exist. It now exists. The `.gitignore` entry has been commented out, not deleted, in keeping with our version-control philosophy. One day we may need to restore our dignity.
+
+**Is there a docker-compose.yml?**
+No. We have to draw the line somewhere, and that line is "one file to carry the one file." A file to configure the file that carries the file is where we get off.
 
 ## Testing
 
